@@ -18,6 +18,14 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         height: 100%;
     }
+    .active {
+	color: #f0faff;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+        &:hover{
+            color: #f0faff; 
+        }
+    }
 `;
 
 export default GlobalStyle;

@@ -1,6 +1,15 @@
-import GlobalStyle from "@/styles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
+import {
+	BrowserRouter as Router,
+	Route,
+	Routes,
+	NavLink,
+	Link,
+} from "react-router-dom";
+import GlobalStyle from "@/styles/GlobalStyles";
 import classes from "@/styles/App.module.css";
+import { CreatePost, Home, PostDetail, Error } from "@/pages";
+import Navbar from "@/components/Navbar";
 
 const App = () => {
 	const theme = {
@@ -31,7 +40,17 @@ const App = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
-			<div className={`${classes.app} bg-bg`}></div>
+			<div className={`${classes.app} bg-bg font-text`}>
+				<Router>
+					<Navbar NavLink={NavLink} Link={Link} />
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="create-post" element={<CreatePost />} />
+						<Route path="post/:postID" element={<PostDetail />} />
+						<Route path="*" element={<Error />} />
+					</Routes>
+				</Router>
+			</div>
 		</ThemeProvider>
 	);
 };
