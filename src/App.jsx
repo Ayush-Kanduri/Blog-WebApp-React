@@ -5,6 +5,8 @@ import {
 	Routes,
 	NavLink,
 	Link,
+	Outlet,
+	useParams,
 } from "react-router-dom";
 import GlobalStyle from "@/styles/GlobalStyles";
 import classes from "@/styles/App.module.css";
@@ -42,12 +44,27 @@ const App = () => {
 			<GlobalStyle />
 			<div className={`${classes.app} bg-bg font-text`}>
 				<Router>
-					<Navbar NavLink={NavLink} Link={Link} />
 					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="create-post" element={<CreatePost />} />
-						<Route path="post/:postID" element={<PostDetail />} />
-						<Route path="*" element={<Error />} />
+						<Route
+							path="/"
+							element={
+								<Navbar
+									NavLink={NavLink}
+									Link={Link}
+									Outlet={Outlet}
+								/>
+							}
+						>
+							<Route index element={<Home />} />
+							<Route path="create-post" element={<CreatePost />} />
+							<Route path="post">
+								<Route
+									path=":postID"
+									element={<PostDetail useParams={useParams} />}
+								/>
+							</Route>
+							<Route path="*" element={<Error />} />
+						</Route>
 					</Routes>
 				</Router>
 			</div>
@@ -56,3 +73,53 @@ const App = () => {
 };
 
 export default App;
+
+// ----------------
+// Normal Routing //
+// ----------------
+{
+	/* 
+<Router>
+	<Routes>
+		<Route path="/" element={<Home />} />
+		<Route path="create-post" element={<CreatePost />} />
+		<Route path="post/:postID" element={<PostDetail />} />
+		<Route path="*" element={<Error />} />
+	</Routes>
+</Router> 
+*/
+}
+
+// -----------------------------------------
+// Nested Routing & Outlet (Routing Layout) //
+// -----------------------------------------
+{
+	/* <Router>
+	<Routes>
+		<Route
+			path="/"
+			element={<Navbar NavLink={NavLink} Link={Link} Outlet={Outlet} />}
+		>
+			<Route index element={<Home />} />
+			<Route path="create-post" element={<CreatePost />} />
+			<Route path="post">
+				<Route
+					path=":postID"
+					element={<PostDetail useParams={useParams} />}
+				/>
+			</Route>
+			<Route path="*" element={<Error />} />
+		</Route>
+	</Routes>
+</Router> */
+}
+
+{
+	/* Common Layout
+<nav>  
+	-----------
+	-----------
+</nav>
+<Outlet /> Child Routes 
+*/
+}

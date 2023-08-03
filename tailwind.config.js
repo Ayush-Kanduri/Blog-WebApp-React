@@ -15,11 +15,12 @@ export default {
 				btnDisabled: "#b8ecff",
 			},
 			screens: {
-				xs: "320px",
-				sm: "640px",
-				md: "768px",
-				lg: "1024px",
-				xl: "1380px",
+				// Desktop First Approach
+				xs: { max: "320px" },
+				sm: { max: "640px" },
+				md: { max: "768px" },
+				lg: { max: "1024px" },
+				xl: { max: "1380px" },
 			},
 			fontFamily: {
 				text: `"Roboto", sans-serif`,
