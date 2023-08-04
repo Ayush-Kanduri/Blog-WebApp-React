@@ -42,7 +42,7 @@ const App = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
-			<div className={`${classes.app} bg-bg font-text`}>
+			<div className={`${classes.app} bg-bg font-text flex flex-col`}>
 				<Router>
 					<Routes>
 						<Route
@@ -62,6 +62,7 @@ const App = () => {
 									path=":postID"
 									element={<PostDetail useParams={useParams} />}
 								/>
+								<Route path="" element={<Error />} />
 							</Route>
 							<Route path="*" element={<Error />} />
 						</Route>

@@ -7,17 +7,38 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         scroll-behavior: smooth;
         overflow-wrap: break-word;
+        scrollbar-width: thin;
+        scrollbar-color: #08b9ef #06344b;
     }
+
+    *::-webkit-scrollbar {
+        width: 0.4rem;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: #06344b;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: #08b9ef;
+    }
+
+    textarea::-webkit-scrollbar-thumb {
+        background-color: #08b9ef;
+    }
+
     body{
         width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
+        /* height: 100vh; */
         overflow-x: hidden;
-        overflow-y: auto;
     }
+
     #root {
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
     }
+
     .active {
 	color: #f0faff;
     text-decoration: underline;
