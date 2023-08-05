@@ -58,7 +58,9 @@ const CreatePost = () => {
 
 	return (
 		<div className="text-5xl p-10 flex-1">
-			<h1 className="text-text font-heading font-bold">Create Post</h1>
+			<h1 className="text-text font-heading font-bold xs:text-center">
+				Create Post
+			</h1>
 			<Toast />
 			<form
 				action=""
@@ -69,7 +71,7 @@ const CreatePost = () => {
 				<div className="w-full flex flex-col p-4 gap-4">
 					<label
 						htmlFor="title"
-						className="text-text font-bold text-4xl font-heading uppercase"
+						className="text-text font-bold text-4xl font-heading uppercase xs:text-2xl"
 					>
 						Title
 					</label>
@@ -79,7 +81,7 @@ const CreatePost = () => {
 						id="title"
 						required
 						placeholder="Enter the Blog Title"
-						className="bg-post text-text font-text font-semibold p-2 px-3 rounded-md shadow-lg border-0 focus:outline-none focus:ring-0 focus:border-0 placeholder:text-text placeholder:opacity-30 text-lg"
+						className="bg-post text-text font-text font-semibold p-2 px-3 rounded-md shadow-lg border-0 focus:outline-none focus:ring-0 focus:border-0 placeholder:text-text placeholder:opacity-30 text-lg xs:text-sm"
 						value={title.value}
 						onChange={title.onChange}
 					/>
@@ -87,7 +89,7 @@ const CreatePost = () => {
 				<div className="w-full flex flex-col p-4 gap-4">
 					<label
 						htmlFor="author"
-						className="text-text font-bold text-4xl font-heading uppercase"
+						className="text-text font-bold text-4xl font-heading uppercase xs:text-2xl"
 					>
 						Author
 					</label>
@@ -97,7 +99,7 @@ const CreatePost = () => {
 						id="author"
 						required
 						placeholder="Enter the Author Name"
-						className="bg-post text-text font-text font-semibold p-2 px-3 rounded-md shadow-lg border-0 focus:outline-none focus:ring-0 focus:border-0 placeholder:text-text placeholder:opacity-30 text-lg"
+						className="bg-post text-text font-text font-semibold p-2 px-3 rounded-md shadow-lg border-0 focus:outline-none focus:ring-0 focus:border-0 placeholder:text-text placeholder:opacity-30 text-lg xs:text-sm"
 						value={author.value}
 						onChange={author.onChange}
 					/>
@@ -105,7 +107,7 @@ const CreatePost = () => {
 				<div className="w-full flex flex-col p-4 gap-4">
 					<label
 						htmlFor="content"
-						className="text-text font-bold text-4xl font-heading uppercase"
+						className="text-text font-bold text-4xl font-heading uppercase xs:text-2xl"
 					>
 						Content
 					</label>
@@ -116,7 +118,7 @@ const CreatePost = () => {
 						rows="15"
 						placeholder="Enter the Blog Content"
 						required
-						className="bg-post text-text font-text font-semibold p-2 px-3 rounded-md shadow-lg border-0 focus:outline-none focus:ring-0 focus:border-0 placeholder:text-text placeholder:opacity-30 text-lg resize-none whitespace-pre-wrap"
+						className="bg-post text-text font-text font-semibold p-2 px-3 rounded-md shadow-lg border-0 focus:outline-none focus:ring-0 focus:border-0 placeholder:text-text placeholder:opacity-30 text-lg resize-none whitespace-pre-wrap sm:h-52 xs:text-sm"
 						value={content.value}
 						onChange={content.onChange}
 					></textarea>
@@ -124,7 +126,7 @@ const CreatePost = () => {
 				<div className="w-full flex flex-col p-4 gap-4">
 					<label
 						htmlFor="url"
-						className="text-text font-bold text-4xl font-heading uppercase"
+						className="text-text font-bold text-4xl font-heading uppercase xs:text-2xl"
 					>
 						Thumbnail URL
 					</label>
@@ -134,7 +136,7 @@ const CreatePost = () => {
 						id="url"
 						required
 						placeholder="Enter the Thumbnail URL"
-						className="bg-post text-text font-text font-semibold p-2 px-3 rounded-md shadow-lg border-0 focus:outline-none focus:ring-0 focus:border-0 placeholder:text-text placeholder:opacity-30 text-lg "
+						className="bg-post text-text font-text font-semibold p-2 px-3 rounded-md shadow-lg border-0 focus:outline-none focus:ring-0 focus:border-0 placeholder:text-text placeholder:opacity-30 text-lg xs:text-sm"
 						value={url.value}
 						onChange={url.onChange}
 					/>
@@ -169,6 +171,10 @@ const StyledButton = styled(Button)`
 	justify-content: center !important;
 	align-items: center !important ;
 	text-align: center !important;
+	@media (width<=400px) {
+		font-size: 0.3rem !important;
+		padding: 10px 20px !important;
+	}
 `;
 
 //NOTE:: This function checks for a new line character and adds a new line character if it is not present//

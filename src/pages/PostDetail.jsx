@@ -33,7 +33,7 @@ const PostDetail = () => {
 		<>
 			{isLoading && (
 				<div className="text-5xl p-10 flex-1">
-					<div className="flex flex-col justify-center items-center gap-8 mt-20">
+					<div className="flex flex-col justify-center items-center gap-8 mt-20 min-w-full">
 						<h1 className="text-text font-bold font-logo animate-bounce">
 							Loading...
 						</h1>
@@ -42,7 +42,7 @@ const PostDetail = () => {
 							height={7}
 							loading
 							speedMultiplier={1}
-							width={1270}
+							width={300}
 						/>
 					</div>
 				</div>
@@ -71,25 +71,23 @@ const Post = ({ flag, post }) => {
 	return (
 		<>
 			{flag && post && (
-				<div className="w-full flex flex-col">
-					<h1 className="text-text font-heading text-6xl font-bold">
+				<div className="w-full flex flex-col mb-10">
+					<h1 className="text-text font-heading text-6xl font-bold sm:text-4xl xs:text-2xl">
 						{post.title}
 					</h1>
-					<h3 className="text-text text-base font-logo font-semibold pl-1 mt-5 flex justify-start items-center">
+					<h3 className="text-text text-base font-logo font-semibold pl-1 mt-5 flex justify-start items-center sm:text-xs xs:flex-col xs:gap-3 xs:items-start">
 						<VerifiedUserIcon />
-						&nbsp;Posted by {post.author}
-					</h3>
-					<h3 className="text-text text-sm font-logo font-semibold pl-1 mt-4 flex justify-start items-center">
+						&nbsp;Posted by {post.author}&nbsp;&nbsp;&nbsp;&nbsp;
 						<CalendarMonthIcon />
 						&nbsp;{printDate(post.createdAt)}
 					</h3>
-					<p className="w-full whitespace-pre-wrap mt-10 font-medium text-text text-lg font-text">
+					<p className="w-full whitespace-pre-wrap mt-10 font-medium text-text text-lg font-text pl-2 sm:text-base sm:pl-0">
 						{post.content}
 					</p>
 					<img
 						src={post.url}
 						alt="blog post thumbnail"
-						className="rounded-2xl shadow-lg w-full object-cover object-center self-center mt-14"
+						className="rounded-2xl shadow-xl shadow-gray-500 w-full object-cover object-center self-center mt-14"
 					/>
 				</div>
 			)}
