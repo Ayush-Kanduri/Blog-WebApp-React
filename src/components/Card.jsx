@@ -25,7 +25,7 @@ const Card = ({ post }) => {
 					{post.title}
 				</h2>
 				<p className="text-[#095371] font-logo text-sm font-bold p-2 px-4">
-					{post.author}
+					Posted by {post.author}
 				</p>
 				<StyledButton
 					variant="contained"

@@ -32,7 +32,10 @@ const Home = () => {
 		} catch (error) {
 			console.log("Error:", error);
 		}
-		return () => unsubscribeRef.current();
+		return () => {
+			unsubscribeRef.current();
+			console.log("Unmounting & Unsubscribing!");
+		};
 	}, []);
 
 	return (
