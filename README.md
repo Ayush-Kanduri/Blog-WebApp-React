@@ -4,6 +4,7 @@
 <p align="center">
 <img src="https://github.com/Ayush-Kanduri/GitHub-Tutorial/assets/76626529/e59e9ab3-659a-496a-9a92-fc90cf85637d">
 </p>
+<br/>
 
 ## ⭐ Introduction
 
@@ -73,8 +74,10 @@ npm install
 <br/>
 
 -   Configure the `ENV VARIABLES` for the Firestore Configuration by creating a _.env_ file at the root & put your firestore variables in it.
+    Variable should start with `VITE_`. Example: VITE_apikey=firebasekey
 
 After this, when you run the app, you will be connected to your _firestore_.
+<br/>
 For reference, this is the documentation: https://firebase.google.com/docs/firestore?authuser=0&hl=en
 <br/>
 <br/>
@@ -117,7 +120,7 @@ Now open http://localhost:4173 in your browser to view the Live Website.
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img width="2000" src="https://skillicons.dev/icons?i=vite,react,materialui,css,styledcomponents,js,nodejs,vscode,github,emotion,babel&theme=dark&perline=11" />
+    <img width="2000" src="https://skillicons.dev/icons?i=vite,react,materialui,css,styledcomponents,js,nodejs,vscode,github,emotion,babel,firebase,tailwind,github,git&theme=dark&perline=5" />
   </a>
 </p>
 
