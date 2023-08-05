@@ -1,7 +1,7 @@
 const Navbar = ({ NavLink, Link, Outlet }) => {
 	return (
 		<>
-			<nav className="bg-border w-full p-7 shadow-xl">
+			<nav className="bg-border w-full p-7 shadow-md">
 				<ul className="flex w-full gap-7 justify-start items-center">
 					<li>
 						<NavLink
@@ -22,7 +22,7 @@ const Navbar = ({ NavLink, Link, Outlet }) => {
 					<li className="ml-auto">
 						<Link
 							to="/"
-							className="text-text font-bold text-5xl font-logo drop-shadow-xl"
+							className="text-text font-bold text-5xl font-logo drop-shadow-md"
 						>
 							Blogster Hub
 						</Link>

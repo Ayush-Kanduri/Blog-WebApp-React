@@ -76,7 +76,7 @@ const App = () => {
 export default App;
 
 // ----------------
-// Normal Routing //
+// NOTE:: Normal Routing //
 // ----------------
 {
 	/* 
@@ -92,7 +92,7 @@ export default App;
 }
 
 // -----------------------------------------
-// Nested Routing & Outlet (Routing Layout) //
+// NOTE:: Nested Routing & Outlet (Routing Layout) //
 // -----------------------------------------
 {
 	/* <Router>
@@ -116,7 +116,7 @@ export default App;
 }
 
 {
-	/* Common Layout
+	/* NOTE:: Common Layout
 <nav>  
 	-----------
 	-----------
